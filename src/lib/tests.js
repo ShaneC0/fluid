@@ -1,9 +1,23 @@
-const Fluid = require('./Fluid')
-const Field = require('./Field')
+import Fluid from './Fluid';
+import Field from './Field';
 
-let fluid = new Fluid(0.5, 0, 0);
-let field = new Field(10, fluid)
 
-field.density[10] = 10;
-console.log(field.density)
-console.log(field.density[field.IX(0, 1)])
+//density
+//vx - x velocity
+//vy - y velocity
+//s - density sources
+
+export default function testField() {
+    let fluid = new Fluid(0.5, 0.5, 0);
+    let field = new Field(20, fluid)
+
+    field.density[0] = 20;
+    field.vx[0] = 10;
+    field.vy[0] = -10;
+
+    console.log(field.density)
+
+    field.step_simulation()
+
+    console.log(field.density)
+}

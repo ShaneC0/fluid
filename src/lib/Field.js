@@ -177,6 +177,11 @@ export default class Field {
     }
 
     step_simulation() {
+
+        console.log(this.density)
+
+
+        //update velocity
         this.diffuse(this.size, 1, this.pvx, this.vx, this.fluid.diffusion, this.fluid.dt)
         this.diffuse(this.size, 2, this.pvy, this.vy, this.fluid.diffusion, this.fluid.dt)
 
@@ -187,7 +192,9 @@ export default class Field {
 
         this.project(this.size, this.vx, this.vy, this.pvx, this.pvy)
 
+        //update density
         this.diffuse(this.size, 0, this.s, this.density, this.fluid.diffusion, this.fluid.dt)
         this.advect(this.size, 0, this.density, this.s, this.vx, this.vy, this.fluid.dt)
+
     }
 }

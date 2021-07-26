@@ -5,13 +5,24 @@
 }
 
 #App {
-
+  width: 100vw;
+  height: 100vh;
+  background-color: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #Field {
-
+ width: 500px;
+ height: 500px;
+ display: flex;
+ flex-wrap: wrap;
+ background-color: white;
 }
 
 .field-item {
-  
+  border: 1px solid black;
+  width: 25px;
+  height: 25px;
 }
